@@ -1,22 +1,27 @@
 <template>
+  <Layout>
+  <template #content>
   <div align="center">
-    <h2>Vuetify Real Board List</h2>
+    <h2>게시판</h2>
     <router-link :to="{ name: 'BoardRegisterPage' }">
-      Create New Board
+      작성하기
     </router-link>
     <!-- 실질적으로 페이지내이션 하는 것-->
     <board-list-page-form :list-array="pageArray"/>
   </div>
+  </template>
+  </Layout>
 </template>
 
 <script>
 import axios from 'axios'
 import BoardListPageForm from '@/components/BoardListPageForm.vue'
-
+import Layout from '@/components/Layout.vue'
 export default {
   name: 'VuetifyBoardListPage',
   components: {
-    BoardListPageForm
+    BoardListPageForm,
+    Layout
   },
   // pageArray는 views에서 list-array는 compo에서 바인드로 전달받음 (data, props)
   data () {

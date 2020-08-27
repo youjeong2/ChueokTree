@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Member;
+import com.example.demo.entity.MemberAuth;
 import com.example.demo.entity.VueBoard;
 import com.example.demo.repository.VueBoardRepository;
 import org.slf4j.Logger;
@@ -41,3 +43,21 @@ public class VueBoardServiceImpl implements  VueBoardService {
         return repository.list();
     }
 }
+
+//    @Override
+//    public void register(Member member) throws Exception {
+//        Member memEntity = new Member();
+//        memEntity.setUserId(member.getUserId());
+//        memEntity.setUserPw(member.getUserPw());
+//        memEntity.setUserName(member.getUserName());
+//        memEntity.setJob(member.getJob());
+//        //  MemberAuth 일반사용자 를 setAuth
+//        MemberAuth memberAuth = new MemberAuth();
+//        memberAuth.setAuth("ROLE_MEMBER");
+//
+//        memEntity.addAuth(memberAuth);
+//
+//        repository.save(memEntity);
+//
+//        member.setUserNo(memEntity.getUserNo());
+//    }

@@ -1,3 +1,17 @@
+//package com.example.demo.repository;
+//
+//import com.example.demo.entity.VueBoard;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.Query;
+//
+//import java.util.List;
+//
+//public interface VueBoardRepository extends JpaRepository<VueBoard, Long> {
+//
+//    @Query("select m.vueboardNo, m.title, m.content, m.writer, m.regDate from VueBoard m")
+//    public List<Object[]> listAllBoard();
+//}
+
 package com.example.demo.repository;
 
 import com.example.demo.entity.VueBoard;
@@ -87,7 +101,7 @@ public class VueBoardRepository {
                     public VueBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
                         VueBoard board = new VueBoard();
 
-                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setBoardNo(rs.getLong("board_no"));
                         board.setTitle(rs.getString("title"));
                         board.setContent(rs.getString("content"));
                         board.setWriter(rs.getString("writer"));

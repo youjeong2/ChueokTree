@@ -1,13 +1,12 @@
-앱뷰
-레이아웃(헤더 컨텐츠 풋터)
-
-col
-row
-
 <template>
   <v-app id="inspire">
     <!-- v-app-bar는상단 메뉴바 -->
-    <v-app-bar app height="150px" clipped-right color="#5F04B4" dark>
+    <v-app-bar
+      app
+      clipped-right
+      color="#5F04B4"
+      dark
+    >
       <!-- 네비게이션 drawer가 v-list를 icon과 drawer로 서포트
        toolbar는 상단에 이름 보여줌
        spacer은 컴포넌트 사이에 공간을 만들고 싶을 때 slot-name="menubar"을 서포트함
@@ -17,7 +16,10 @@ row
       <v-spacer></v-spacer>
       <slot name="menubar"></slot>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
       <!--list-dense는 리스트 정렬
       action안에 icon 모양넣을 수 있고 content안에 홈으로 이동누르면 이동할 수 있는거 넣을 수 있음
       mdi-exit은 아이콘 모양 / 포토샵으로 만들 수 있음-->

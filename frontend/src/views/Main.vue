@@ -19,7 +19,6 @@
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
             style="padding: 100px; width: 100px;">TouristCategory</v-btn>
-
           <div>
             <!-- <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span> -->
           </div>
@@ -46,25 +45,12 @@
     <template #content>
       <v-simple-table>
         <template v-slot:default>
-        <div id="app">
-          <v-app id="inspire">
-            <v-row>
-              <v-col cols="12" sm="6">
-                <v-hover v-slot:default="{ hover }" open-delay="200">
-                  <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="250" max-width="200">
-                    <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
-                    <v-img src="../assets/1.jpg" width="200"></v-img>
-                    집에가자!
-                  </v-card-text>
-                </v-card>
-              </v-hover>
-            </v-col>
-          </v-row>
-        </v-app>
-      </div>
-          <v-img src="../assets/1.jpg" width="200"></v-img>
-           <v-img src="../assets/1.jpg" width="200"></v-img>
-            <v-img src="../assets/1.jpg" width="200"></v-img>
+          <thead>
+            <tr>
+              <th class="text-left">No.</th>
+              <th class="text-left">제목</th>
+            </tr>
+          </thead>
         </template>
       </v-simple-table>
     </template>
