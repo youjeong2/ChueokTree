@@ -33,5 +33,4 @@ export default {
     ...mapActions(['fetchBoardList'])
   }
 }
-
 </script>

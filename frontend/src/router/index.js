@@ -23,6 +23,7 @@ import VuetifyBoardListPage from '../views/VuetifyBoardListPage.vue'
 import CrawlCategory from '../views/CrawlCategory.vue'
 
 import Main from '../views/Main.vue'
+import Orders from '../views/Orders.vue'
 
 Vue.use(VueRouter)
 
@@ -116,6 +117,13 @@ const routes = [
     name: 'Main',
     components: {
       default: Main
+    }
+  },
+  {
+    path: '/Orders',
+    name: 'Orders',
+    components: {
+      default: Orders
     }
   }
 ]

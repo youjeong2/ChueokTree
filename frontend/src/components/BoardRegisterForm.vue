@@ -1,32 +1,38 @@
 <template>
-  <!-- BoardPage에 추가한 onSubmit을 여기서 실행함-->
-  <form @submit.prevent="onSubmit">
-    <h3>Board Register Form</h3>
-    <table>
-      <tr>
-        <td>Title</td>
-        <td><input type="text" v-model="title"></td>
-      </tr>
-      <tr>
-        <td>Writer</td>
-        <td><input type="text" v-model="writer"></td>
-      </tr>
-      <tr>
-        <td>Content</td>
-        <td><textarea v-model="content" rows="5"></textarea></td>
-      </tr>
-    </table>
+ <Layout>
+   <template #content>
+    <!-- BoardPage에 추가한 onSubmit을 여기서 실행함-->
+      <form @submit.prevent="onSubmit">
+        <h3>Board Register Form</h3>
+        <table>
+          <tr>
+            <td>Title</td>
+            <td><input type="text" v-model="title"></td>
+          </tr>
+          <tr>
+            <td>Writer</td>
+            <td><input type="text" v-model="writer"></td>
+          </tr>
+          <tr>
+            <td>Content</td>
+            <td><textarea v-model="content" rows="5"></textarea></td>
+          </tr>
+        </table>
 
-    <div>
-      <button type="submit">Register</button>
-      <router-link :to="{ name: 'BoardListPage' }">
-        Cancel
-      </router-link>
-    </div>
-  </form>
+        <div>
+          <button type="submit">Register</button>
+          <router-link :to="{ name: 'BoardListPage' }">
+            Cancel
+          </router-link>
+        </div>
+      </form>
+    </template>
+  </Layout>
 </template>
 
 <script>
+import Layout from '@/components/Layout.vue'
+
 export default {
   name: 'BoardRegisterForm',
   data () {
@@ -35,6 +41,9 @@ export default {
       writer: '',
       content: ''
     }
+  },
+  components: {
+    Layout
   },
   methods: {
     onSubmit () {

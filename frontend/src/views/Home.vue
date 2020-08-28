@@ -28,9 +28,9 @@
         <div id="header" v-else>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
             style="padding: 10px; width: 100px;">About</v-btn>
-          <v-btn @click="$router.push({ name: 'Start' })" text color="white"
+          <v-btn @click="$router.push({ name: 'Orders' })" text color="white"
             style="padding: 10px; width: 50px;">주문하기</v-btn>
-          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
+          <v-btn @click="$router.push({ name: 'BoardListPage' })" text color="white"
             style="padding: 10px; width: 100px;">응원하기</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
@@ -77,6 +77,7 @@
 import store from '../store'
 import Vue from 'vue'
 import Layout from '../components/Layout'
+import OrderPage from '../components/OrderPage'
 import axios from 'axios'
 // import cookies from 'vue-cookies'
 
