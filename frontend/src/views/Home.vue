@@ -11,10 +11,8 @@
           <button id="login" @click="onClickLogout">Logout</button>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
             style="padding: 10px; width: 100px;">About</v-btn>
-          <v-btn @click="$router.push({ name: 'Start' })" text color="white"
-            style="padding: 10px; width: 50px;">주문하기</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
-            style="padding: 10px; width: 100px;">응원하기</v-btn>
+            style="padding: 10px; width: 100px;">Coumunity</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
@@ -28,10 +26,8 @@
         <div id="header" v-else>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
             style="padding: 10px; width: 100px;">About</v-btn>
-          <v-btn @click="$router.push({ name: 'Orders' })" text color="white"
-            style="padding: 10px; width: 50px;">주문하기</v-btn>
-          <v-btn @click="$router.push({ name: 'BoardListPage' })" text color="white"
-            style="padding: 10px; width: 100px;">응원하기</v-btn>
+          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
+            style="padding: 10px; width: 100px;">Coumunity</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
@@ -49,12 +45,12 @@
         <div id="app">
           <v-app id="inspire">
             <v-row>
-              <v-col cols="12" sm="6">
+              <v-col cols="12" sm="6" md="12">
                 <v-hover v-slot:default="{ hover }" open-delay="200">
                   <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="250" max-width="200">
                     <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
                     <v-img src="../assets/1.jpg" width="200"></v-img>
-                    집에가자!
+                    BlueBerry!
                   </v-card-text>
                 </v-card>
               </v-hover>
@@ -62,9 +58,6 @@
           </v-row>
         </v-app>
       </div>
-          <v-img src="../assets/1.jpg" width="200"></v-img>
-           <v-img src="../assets/1.jpg" width="200"></v-img>
-            <v-img src="../assets/1.jpg" width="200"></v-img>
         </template>
       </v-simple-table>
     </template>
@@ -77,7 +70,6 @@
 import store from '../store'
 import Vue from 'vue'
 import Layout from '../components/Layout'
-import OrderPage from '../components/OrderPage'
 import axios from 'axios'
 // import cookies from 'vue-cookies'
 

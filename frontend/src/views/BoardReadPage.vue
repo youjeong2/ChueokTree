@@ -11,7 +11,7 @@
     </router-link>
     <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
     <button @click="onDelete">Delete</button>
-    <router-link :to="{ name: 'BoardListPage' }">
+    <router-link :to="{ name: 'VuetifyBoardListForm' }">
       List
     </router-link>
   </div>

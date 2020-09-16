@@ -37,7 +37,7 @@
 </div>
 
 .basil {
-background-color: #FFFBE6 !important;
+background-color: #9D6CFF !important;
 }
 .basil--text {
 color: #356859 !important;

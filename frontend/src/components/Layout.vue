@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <!-- v-app-bar는상단 메뉴바 -->
     <v-card class="overflow-hidden">
-      <v-app-bar app height="150px" clipped-right color="#5F04B4" dark hide-on-scroll scroll-target="#scrolling-techniques-4" >
+      <v-app-bar app height="150px" clipped-right color="#5c00e6" dark hide-on-scroll scroll-target="#scrolling-techniques-4" >
         <!-- 네비게이션 drawer가 v-list를 icon과 drawer로 서포트
          toolbar는 상단에 이름 보여줌
          spacer은 컴포넌트 사이에 공간을 만들고 싶을 때 slot-name="menubar"을 서포트함
@@ -17,13 +17,25 @@
       <!--list-dense는 리스트 정렬
       action안에 icon 모양넣을 수 있고 content안에 홈으로 이동누르면 이동할 수 있는거 넣을 수 있음
       mdi-exit은 아이콘 모양 / 포토샵으로 만들 수 있음-->
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            CheokTree
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            blueberry
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+
       <v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
+            <v-icon>home-app</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-            <v-list-item-title @click="home">홈으로 이동</v-list-item-title>
+            <v-list-item-title @click="home">HOME</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -31,32 +43,10 @@
       <v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
+          <v-icon></v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="savednews()">주문서 작성하기</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-
-      <v-list dense>
-        <v-list-item @click.stop="left = !left">
-          <v-list-item-action>
-            <div>>>></div>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="suggest">자주 묻는 질문</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-
-      <v-list dense>
-        <v-list-item @click.stop="left = !left">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="category()">오늘의 추천루트</v-list-item-title>
+            <v-list-item-title @click="suggest">Comunity</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -65,14 +55,25 @@
      크롤링한 리스트 정보를 가져오고 리스트넘버랑 제목을 뿌려주는 것 -->
 
     <v-container>
+    <header class="v-sheet theme--light v-toolbar v-toolbar--dense v-toolbar--flat transparent" style="height: 48px;">
+    <div class="v-toolbar__content" style="height: 48px;">
+    <div class="mr-4 v-sheet theme--light" style="width: 140px;">
+    <span class="mr-2 text-truncate">게시판</span>
+      </div>
+      </div>
+    </header>
+     <div class="col-md-12 col-lg-10 col-12">
+     <div class="v-card v-card--flat v-sheet v-sheet--outlined theme--light">
       <v-content id="content">
         <slot name="content" class="font">
         </slot>
       </v-content>
+      </div>
+      </div>
     </v-container>
 
     <!-- 하단 부분 &copy가 coportaition C 가 되는 것 -->
-    <v-footer app color="#5F04B4" class="white--text">
+    <v-footer app color="#5c00e6" class="white--text">
       <v-spacer></v-spacer>
       <span>&copy; chueoktree</span>
     </v-footer>
@@ -104,4 +105,5 @@ export default {
     }
   }
 }
+
 </script>

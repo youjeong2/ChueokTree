@@ -19,9 +19,9 @@
       </tr>
     </table>
     <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이전</button>
+      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이 전</button>
       <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다음</button>
+      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다 음</button>
     </div>
   </div>
 </template>

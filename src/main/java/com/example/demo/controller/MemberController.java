@@ -102,16 +102,24 @@ public class MemberController {
             member.setUserPw(passwordEncoder.encode(inputPassword));
 
             member.setJob("Admin");
-
             service.setupAdmin(member);
 
-            return new ResponseEntity<>("SUCCESS", HttpStatus.OK);
+            return new ResponseEntity<>("adminSUCCESS", HttpStatus.OK);
+        } else {
+            String inputPassword = member.getUserPw();
+            member.setUserPw(passwordEncoder.encode(inputPassword));
+
+            member.setJob("member");
+            service.register(member);
+
+            return new ResponseEntity<>("MemberSUCCESS", HttpStatus.OK);
+
+
         }
+//        String message = messageSource.getMessage("common.cannotSetupAdmin",
+//                null, Locale.KOREAN);
 
-        String message = messageSource.getMessage("common.cannotSetupAdmin",
-                null, Locale.KOREAN);
-
-        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/myinfo")
