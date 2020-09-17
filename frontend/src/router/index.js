@@ -10,8 +10,8 @@ import BoardModifyPage from '../views/BoardModifyPage.vue'
 import BoardReadPage from '../views/BoardReadPage.vue'
 
 // For Login System
-import LoginPage from '../views/LoginPage.vue'
-import AdminSetupPage from '../views/AdminSetupPage.vue'
+import LoginPage from '../views/member/LoginPage.vue'
+import AdminSetupPage from '../views/member/AdminSetupPage.vue'
 
 // Vuetify
 import VuetifyBoard from '../views/VuetifyBoard.vue'

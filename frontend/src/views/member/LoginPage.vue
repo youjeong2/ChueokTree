@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm.vue'
+import LoginForm from '@/components/member/LoginForm.vue'
 import { mapActions } from 'vuex'
 import Layout from '@/components/Layout.vue'
 export default {
