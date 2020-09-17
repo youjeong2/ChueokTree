@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import BoardRegisterForm from '@/components/BoardRegisterForm'
+import BoardRegisterForm from '@/components/board/BoardRegisterForm'
 // 컨트롤러랑 연결하기 위해 axios 추가하기
 import axios from 'axios'
 

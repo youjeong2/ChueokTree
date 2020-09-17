@@ -4,20 +4,20 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 
 // For Cafe Board
-import BoardListPage from '../views/BoardListPage.vue'
-import BoardRegisterPage from '../views/BoardRegisterPage.vue'
-import BoardModifyPage from '../views/BoardModifyPage.vue'
-import BoardReadPage from '../views/BoardReadPage.vue'
+import BoardListPage from '../views/board/BoardListPage.vue'
+import BoardRegisterPage from '../views/board/BoardRegisterPage.vue'
+import BoardModifyPage from '../views/board/BoardModifyPage.vue'
+import BoardReadPage from '../views/board/BoardReadPage.vue'
 
 // For Login System
 import LoginPage from '../views/member/LoginPage.vue'
 import AdminSetupPage from '../views/member/AdminSetupPage.vue'
 
 // Vuetify
-import VuetifyBoard from '../views/VuetifyBoard.vue'
+import VuetifyBoard from '../views/board/VuetifyBoard.vue'
 
 // VuetifyBoardListPage
-import VuetifyBoardListPage from '../views/VuetifyBoardListPage.vue'
+import VuetifyBoardListPage from '../views/board/VuetifyBoardListPage.vue'
 
 // CrawlCategory
 import CrawlCategory from '../views/CrawlCategory.vue'

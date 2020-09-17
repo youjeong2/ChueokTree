@@ -56,6 +56,18 @@
               </v-hover>
             </v-col>
           </v-row>
+          <v-row>
+            <v-col cols="12" sm="6" md="12">
+              <v-hover v-slot:default="{ hover }" open-delay="200">
+                <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="250" max-width="200">
+                  <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
+                  <v-img src="../assets/1.jpg" width="200"></v-img>
+                  BlueBerry!
+                </v-card-text>
+              </v-card>
+            </v-hover>
+          </v-col>
+        </v-row>
         </v-app>
       </div>
         </template>

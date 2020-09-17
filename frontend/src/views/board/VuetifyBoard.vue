@@ -17,7 +17,7 @@ VuetifyBoardListPageForm-->
 
 <script>
 import axios from 'axios'
-import VuetifyBoardListForm from '@/components/VuetifyBoardListForm.vue'
+import VuetifyBoardListForm from '@/components/board/VuetifyBoardListForm.vue'
 
 export default {
   name: 'VuetifyBoard',

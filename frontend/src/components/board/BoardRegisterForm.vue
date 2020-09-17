@@ -21,9 +21,7 @@
 
         <div>
           <button type="submit">Register</button>
-          <router-link :to="{ name: 'BoardListPage' }">
-            Cancel
-          </router-link>
+          <router-link :to="{ name: 'VuetifyBoardListPage' }">Cancel</router-link>
         </div>
       </form>
     </template>

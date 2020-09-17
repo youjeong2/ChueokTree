@@ -58,16 +58,14 @@
     <header class="v-sheet theme--light v-toolbar v-toolbar--dense v-toolbar--flat transparent" style="height: 48px;">
     <div class="v-toolbar__content" style="height: 48px;">
     <div class="mr-4 v-sheet theme--light" style="width: 140px;">
-    <span class="mr-2 text-truncate">게시판</span>
+    <span class="mr-2 text-truncate">Hello !</span>
       </div>
       </div>
     </header>
-     <div class="col-md-12 col-lg-10 col-12">
+     <div class="col-md-100 col-lg-100 col-100">
      <div class="v-card v-card--flat v-sheet v-sheet--outlined theme--light">
-      <v-content id="content">
-        <slot name="content" class="font">
-        </slot>
-      </v-content>
+      <slot name="content" id ="font">
+      </slot>
       </div>
       </div>
     </v-container>

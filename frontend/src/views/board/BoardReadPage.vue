@@ -6,19 +6,15 @@
     <!-- Edit을 누르면 정보를 수정(BoardModifyPage로 link)할 수 있도록 라우팅 -->
     <board-read v-if="board" :board="board"/>
     <p v-else>Loading ...</p>
-    <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">
-      Edit
-    </router-link>
+    <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">Edit</router-link>
     <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
     <button @click="onDelete">Delete</button>
-    <router-link :to="{ name: 'VuetifyBoardListForm' }">
-      List
-    </router-link>
+    <router-link :to="{ name: 'VuetifyBoardListPage' }">List</router-link>
   </div>
 </template>
 
 <script>
-import BoardRead from '@/components/BoardRead'
+import BoardRead from '@/components/board/BoardRead'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 
@@ -60,7 +56,7 @@ export default {
         .then(res => {
           alert('Delete Success')
           // delete를 누르면 BoardListPage로 강제로 보내기
-          this.$router.push({ name: 'BoardListPage' })
+          this.$router.push({ name: 'VuetifyBoardListPage' })
         })
         .catch(err => {
           alert(err.response.data.message)

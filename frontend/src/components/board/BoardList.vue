@@ -17,7 +17,6 @@
               List is empty
             </td>
           </tr>
-
           <tr v-else v-for="board in boards" :key="board.boardNo">
             <td align="center">{{ board.boardNo }}</td>
             <td align="left">

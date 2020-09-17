@@ -1,38 +1,68 @@
 <template>
   <div>
-    <h3>Board List View</h3>
-    <table border="1">
-      <tr>
-        <th align="center" width="80">No</th>
-        <th align="center" width="320">Title</th>
-        <th align="center" width="100">Writer</th>
-        <th align="center" width="180">Registration Date</th>
-      </tr>
-      <tr v-for="page in paginatedData" :key="page.boardNo">
-        <td>{{ page.boardNo }}</td>
-        <td><router-link :to="{ name: 'BoardReadPage',
-                params: { boardNo: page.boardNo.toString() } }">
-          {{ page.title }}
-        </router-link></td>
-        <td>{{ page.writer }}</td>
-        <td>{{ page.regDate }}</td>
-      </tr>
-    </table>
-    <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이 전</button>
-      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다 음</button>
-    </div>
+    <v-card-title>
+      게시판
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="headers"
+      :items="paginatedData"
+      :search="search"
+      :items-per-page="5"
+    >
+      <template v-slot:item.title="{ item }">
+        <div @click="moveRead">{{ item.title }}</div>
+      </template>
+    </v-data-table>
   </div>
 </template>
 
 <script>
+import router from '@/router'
+
 export default {
-  name: 'VuetifyListPageForm',
+  name: 'BoardListPageForm',
   data () {
     return {
       pageNum: 0,
-      pageArray: []
+      pageArray: [],
+      search: '',
+      headers: [
+        {
+          text: 'No',
+          align: 'center',
+          sortable: true,
+          value: 'boardNo',
+          width: '10%'
+        },
+        {
+          text: 'Title',
+          align: 'center',
+          sortable: false,
+          value: 'title'
+        },
+        {
+          text: 'Writer',
+          align: 'center',
+          sortable: false,
+          value: 'writer',
+          width: '20%'
+        },
+        {
+          text: 'Registration Date',
+          align: 'center',
+          sortable: false,
+          value: 'regDate',
+          width: '20%'
+        }
+      ]
     }
   },
   // 아래쪽VutifyBoardListPage에서 만든listArray를 넣주기
@@ -54,6 +84,9 @@ export default {
     },
     prevPage () {
       this.pageNum -= 1
+    },
+    moveRead () {
+      router.push('/board/boardNo')
     }
   },
   // 여기의 계산식에 의해 위의 페이지가 Count됨

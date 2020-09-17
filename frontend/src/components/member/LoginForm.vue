@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
       <v-row justify="center">
-        <v-col cols="12" sm="10" md="7" lg="11">
+        <v-col cols="20" sm="10" md="7" lg="11">
           <v-card ref="form">
-            <v-col cols="12" sm="10" md="8" lg="11">
-              <v-text-field sm="10"
+            <v-col cols="12" sm="10" md="8" lg="5">
+              <v-text-field
                 v-model="userid"
                   color="purple darken-2"
                   :error-messages="IdErrors"
@@ -14,6 +13,7 @@
                   required
                   @input="$v.name.$touch()"
                   @blur="$v.name.$touch()"
+
                 ></v-text-field>
                 </v-col>
 
@@ -46,7 +46,6 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-app>
   </div>
 </template>
 

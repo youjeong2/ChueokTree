@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import BoardList from '@/components/BoardList'
+import BoardList from '@/components/board/BoardList'
 import { mapState, mapActions } from 'vuex'
 
 export default {
