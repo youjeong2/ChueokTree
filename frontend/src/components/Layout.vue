@@ -2,13 +2,13 @@
   <v-app id="inspire">
     <!-- v-app-bar는상단 메뉴바 -->
     <v-card class="overflow-hidden">
-      <v-app-bar app height="150px" clipped-right color="#5c00e6" dark hide-on-scroll scroll-target="#scrolling-techniques-4" >
+      <v-app-bar app height="150px" clipped-right color="#7B1FA2" dark hide-on-scroll scroll-target="#scrolling-techniques-4" >
         <!-- 네비게이션 drawer가 v-list를 icon과 drawer로 서포트
          toolbar는 상단에 이름 보여줌
          spacer은 컴포넌트 사이에 공간을 만들고 싶을 때 slot-name="menubar"을 서포트함
          슬롯으로 메뉴바를 연결하는거는 크롤링카테고리의 menubar정보를 여기에 연결하겠다는 뜻-->
           <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-          <v-toolbar-title><div @click="home">ChueokTree</div></v-toolbar-title>
+          <v-toolbar-title><div @click="home">C h u e o k T r e e</div></v-toolbar-title>
           <v-spacer></v-spacer>
         <slot name="menubar"></slot>
       </v-app-bar>
@@ -46,7 +46,7 @@
           <v-icon></v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="suggest">Comunity</v-list-item-title>
+            <v-list-item-title @click="community">COMMUNITY</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -55,13 +55,6 @@
      크롤링한 리스트 정보를 가져오고 리스트넘버랑 제목을 뿌려주는 것 -->
 
     <v-container>
-    <header class="v-sheet theme--light v-toolbar v-toolbar--dense v-toolbar--flat transparent" style="height: 48px;">
-    <div class="v-toolbar__content" style="height: 48px;">
-    <div class="mr-4 v-sheet theme--light" style="width: 140px;">
-    <span class="mr-2 text-truncate">Hello !</span>
-      </div>
-      </div>
-    </header>
      <div class="col-md-100 col-lg-100 col-100">
      <div class="v-card v-card--flat v-sheet v-sheet--outlined theme--light">
       <slot name="content" id ="font">
@@ -71,7 +64,7 @@
     </v-container>
 
     <!-- 하단 부분 &copy가 coportaition C 가 되는 것 -->
-    <v-footer app color="#5c00e6" class="white--text">
+    <v-footer app color="#7B1FA2" class="white--text">
       <v-spacer></v-spacer>
       <span>&copy; chueoktree</span>
     </v-footer>
@@ -95,8 +88,8 @@ export default {
     category () {
       (window.location.pathname !== '/CrawlCategory') ? router.push('/CrawlCategory') : router.go(0)
     },
-    suggest () {
-      (window.location.pathname !== '/suggestednews/list') ? router.push('/suggestednews/list') : router.go(0)
+    community () {
+      (window.location.pathname !== '/VuetifyBoardListPage') ? router.push('/VuetifyBoardListPage/') : router.go(0)
     },
     savednews () {
       (window.location.pathname !== '/savednews/list') ? router.push('/savednews/list') : router.go(0)

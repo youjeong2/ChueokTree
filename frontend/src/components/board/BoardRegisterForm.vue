@@ -1,29 +1,43 @@
 <template>
  <Layout>
    <template #content>
-    <!-- BoardPage에 추가한 onSubmit을 여기서 실행함-->
-      <form @submit.prevent="onSubmit">
-        <h3>Board Register Form</h3>
-        <table>
-          <tr>
-            <td>Title</td>
-            <td><input type="text" v-model="title"></td>
-          </tr>
-          <tr>
-            <td>Writer</td>
-            <td><input type="text" v-model="writer"></td>
-          </tr>
-          <tr>
-            <td>Content</td>
-            <td><textarea v-model="content" rows="5"></textarea></td>
-          </tr>
-        </table>
+      <div id="app">
+          <v-row justify="center">
+            <v-col cols="20" sm="10" md="7" lg="11">
+              <v-card ref="form">
+                <v-col cols="12" sm="10" md="8" lg="5" >
+                  <v-text-field
+                      input type="text" v-model="title"
+                      color="purple darken-2"
+                      label="title"
+                    ></v-text-field>
+                    </v-col>
 
-        <div>
-          <button type="submit">Register</button>
-          <router-link :to="{ name: 'VuetifyBoardListPage' }">Cancel</router-link>
-        </div>
-      </form>
+                    <v-col cols="12" sm="10" md="8" lg="5">
+                    <v-text-field
+                      input type="text" v-model="writer"
+                      color="purple darken-2"
+                      label="writer"
+                    ></v-text-field>
+                    </v-col>
+
+                <v-col cols="12" sm="10" md="8" lg="5" >
+                  <v-text-field
+                      textarea v-model="content" rows="5"
+                      color="purple darken-2"
+                      label="content"
+                    ></v-text-field>
+                    </v-col>
+
+                <v-col cols="5" sm="5" md="5" lg="5">
+                <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
+                <v-btn @click="clear">clear</v-btn>
+                </v-col>
+                <br><br>
+              </v-card>
+            </v-col>
+          </v-row>
+      </div>
     </template>
   </Layout>
 </template>

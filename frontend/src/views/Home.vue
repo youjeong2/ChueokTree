@@ -17,7 +17,6 @@
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
             style="padding: 100px; width: 100px;">TouristCategory</v-btn>
-
           <div>
             <!-- <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span> -->
           </div>
@@ -31,45 +30,29 @@
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
-            style="padding: 100px; width: 100px;">TouristCategory</v-btn>
+            style="padding: 10px; width: 150px;">TouristCategory</v-btn>
           <v-btn @click="$router.push({ name: 'LoginPage' })" text color="white"
-            style="padding: 4px; width: 100px;">Login</v-btn>
+            style="padding: 4px; width: 80px;">Login</v-btn>
           <v-btn @click="$router.push({ name: 'AdminSetupPage' })" text color="white"
-            style="padding: 2px; width: 100px;">Register</v-btn>
+            style="padding: 4px; width: 80px;">SignUp</v-btn>
         </div>
       </div>
     </template>
     <template #content>
       <v-simple-table>
         <template v-slot:default>
-        <div id="app">
-          <v-app id="inspire">
             <v-row>
               <v-col cols="12" sm="6" md="12">
                 <v-hover v-slot:default="{ hover }" open-delay="200">
-                  <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="250" max-width="200">
+                  <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="500" max-width="600">
                     <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
-                    <v-img src="../assets/1.jpg" width="200"></v-img>
-                    BlueBerry!
+                    <v-img src="../assets/home.jpg"></v-img>
+                    New In
                   </v-card-text>
                 </v-card>
               </v-hover>
             </v-col>
           </v-row>
-          <v-row>
-            <v-col cols="12" sm="6" md="12">
-              <v-hover v-slot:default="{ hover }" open-delay="200">
-                <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="250" max-width="200">
-                  <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
-                  <v-img src="../assets/1.jpg" width="200"></v-img>
-                  BlueBerry!
-                </v-card-text>
-              </v-card>
-            </v-hover>
-          </v-col>
-        </v-row>
-        </v-app>
-      </div>
         </template>
       </v-simple-table>
     </template>

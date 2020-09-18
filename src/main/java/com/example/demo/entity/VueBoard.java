@@ -18,7 +18,6 @@ public class VueBoard {
     @Id
     // autoincrement
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "board_no")
     private long boardNo;
     // nullable= null
@@ -33,6 +32,7 @@ public class VueBoard {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @CreationTimestamp
+    @Column(columnDefinition = "datetime default now()")
     private Date regDate;
 }
 //package com.example.demo.entity;

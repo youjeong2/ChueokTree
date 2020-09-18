@@ -1,45 +1,54 @@
 <template>
-  <div>
-    <h3>Board Modified Form</h3>
-    <form @submit.prevent="onSubmit">
-      <table>
-        <tr>
-          <td>No</td>
-          <td><input type="text" :value="board.boardNo" disabled></td>
-        </tr>
-        <tr>
-          <td>Registration Date</td>
-          <td><input type="text" :value="board.regDate" disabled></td>
-        </tr>
-        <tr>
-          <td>Title</td>
-          <!-- 내가 수정한 정보를 보내야하니까 그냥 title -->
-          <td><input type="text" v-model="title"></td>
-        </tr>
-        <tr>
-          <td>Writer</td>
-          <!-- 얘는 바인드 -->
-          <td><input type="text" :value="board.writer" disabled></td>
-        </tr>
-        <tr>
-          <td>Content</td>
-          <td><textarea v-model="content" rows="5"></textarea></td>
-        </tr>
-      </table>
-
+  <Layout>
+    <template #content>
       <div>
-        <button type="submit">Modify</button>
-        <router-link :to="{ name: 'BoardReadPage', params: { boardNo: board.boardNo.toString() } }">
-          Cancel
-        </router-link>
+        <h3>Board Modified Form</h3>
+        <form @submit.prevent="onSubmit">
+          <table>
+            <tr>
+              <td>No</td>
+              <td><input type="text" :value="board.boardNo" disabled></td>
+            </tr>
+            <tr>
+              <td>Registration Date</td>
+              <td><input type="text" :value="board.regDate" disabled></td>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <!-- 내가 수정한 정보를 보내야하니까 그냥 title -->
+              <td><input type="text" v-model="title"></td>
+            </tr>
+            <tr>
+              <td>Writer</td>
+              <!-- 얘는 바인드 -->
+              <td><input type="text" :value="board.writer" disabled></td>
+            </tr>
+            <tr>
+              <td>Content</td>
+              <td><textarea v-model="content" rows="5"></textarea></td>
+            </tr>
+          </table>
+
+          <div>
+            <button type="submit">Modify</button>
+            <router-link :to="{ name: 'BoardReadPage', params: { boardNo: board.boardNo.toString() } }">
+              Cancel
+            </router-link>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
+    </template>
+  </Layout>
 </template>
 
 <script>
+import Layout from '@/components/Layout.vue'
+
 export default {
   name: 'BoardModifyForm',
+  components: {
+    Layout
+  },
   props: {
     board: {
       type: Object,

@@ -10,17 +10,26 @@
         single-line
         hide-details
       ></v-text-field>
+      <v-row>
+         <v-btn class="ma-2" outlined large fab color="indigo">
+          <router-link :to="{ name: 'BoardRegisterPage' }"><v-icon>mdi-pencil</v-icon></router-link>
+        </v-btn>
+        </v-row>
     </v-card-title>
     <v-data-table
       :headers="headers"
       :items="paginatedData"
       :search="search"
-      :items-per-page="5"
     >
       <template v-slot:item.title="{ item }">
-        <div @click="moveRead">{{ item.title }}</div>
+        <div @click="moveRead(item.boardNo)">{{ item.title  }}</div>
       </template>
     </v-data-table>
+    <div class="btn-cover">
+      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이전</button>
+      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
+      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다음</button>
+    </div>
   </div>
 </template>
 
@@ -85,8 +94,8 @@ export default {
     prevPage () {
       this.pageNum -= 1
     },
-    moveRead () {
-      router.push('/board/boardNo')
+    moveRead (boardNo) {
+      router.push({ name: 'BoardReadPage', params: { boardNo: boardNo } })
     }
   },
   // 여기의 계산식에 의해 위의 페이지가 Count됨
@@ -112,3 +121,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  border: 2px solid b
+</style>

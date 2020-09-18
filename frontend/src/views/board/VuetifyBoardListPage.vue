@@ -1,9 +1,7 @@
 <template>
   <Layout>
   <template #content>
-  <div align="center">
-    <h2>게시판</h2>
-    <router-link :to="{ name: 'BoardRegisterPage' }">작성하기</router-link>
+  <div align="center" >
     <!-- 실질적으로 페이지내이션 하는 것-->
     <board-list-page-form :list-array="pageArray"/>
   </div>
