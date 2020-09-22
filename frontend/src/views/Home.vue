@@ -8,15 +8,15 @@
         <!-- -isAuthorized 권한이 있으면 체크를 해서 접근을 할 수 있게 해줌
              -권한이 부여된거니까 로그아웃이 되게하고 @클릭하면 로그아웃이 되게 -->
         <div id="header" v-if="isAuthorized">
-          <button id="login" @click="onClickLogout">Logout</button>
+          <v-btn id="login" @click="onClickLogout" text color="white">LOGOUT</v-btn>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
             style="padding: 10px; width: 100px;">About</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
-            style="padding: 10px; width: 100px;">Coumunity</v-btn>
+            style="padding: 10px; width: 100px;">Community</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
           <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
-            style="padding: 100px; width: 100px;">TouristCategory</v-btn>
+            style="padding: 10px; width: 150px;">TouristCategory</v-btn>
           <div>
             <!-- <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span> -->
           </div>

@@ -6,10 +6,10 @@
     <!-- Edit을 누르면 정보를 수정(BoardModifyPage로 link)할 수 있도록 라우팅 -->
     <board-read v-if="board" :board="board"/>
     <p v-else>Loading ...</p>
-    <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">Edit</router-link>
-    <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
-    <button @click="onDelete">Delete</button>
-    <router-link :to="{ name: 'VuetifyBoardListPage' }">List</router-link>
+      <v-btn @click="$router.push({ name: 'BoardModifyPage', params: { boardNo } })">Edit</v-btn>
+      <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
+      <v-btn @click="onDelete">Delete</v-btn>
+      <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })">List</v-btn>
   </div>
 </template>
 

@@ -2,18 +2,24 @@
   <div>
     <v-card-title>
       게시판
+        <v-divider
+          class="mx-10"
+          inset
+          vertical
+        ></v-divider>
       <v-spacer></v-spacer>
       <v-text-field
+        color="purple darken-2"
         v-model="search"
         append-icon="mdi-magnify"
         label="Search"
         single-line
         hide-details
+        class="ma-5 "
       ></v-text-field>
       <v-row>
-         <v-btn class="ma-2" outlined large fab color="indigo">
-          <router-link :to="{ name: 'BoardRegisterPage' }"><v-icon>mdi-pencil</v-icon></router-link>
-        </v-btn>
+          <v-btn @click="$router.push({ name: 'BoardRegisterPage' })" class="ma-2" outlined large fab color="purple darken-2">
+            <v-icon>mdi-pencil</v-icon></v-btn>
         </v-row>
     </v-card-title>
     <v-data-table
@@ -26,9 +32,10 @@
       </template>
     </v-data-table>
     <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이전</button>
-      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다음</button>
+      <v-btn :disabled="pageNum === 0"
+        @click="prevPage" fab width="40" height="40" color="purple darken-2" class="page-btn mr-2"><v-icon>mdi-chevron-left</v-icon></v-btn>
+      <span class="page-count grey--text" >{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
+      <v-btn :disabled="pageNum >= pageCount - 1" @click="nextPage" fab width="40" height="40" color="purple darken-3" class="page-btn ml-2"><v-icon>mdi-chevron-right</v-icon></v-btn>
     </div>
   </div>
 </template>

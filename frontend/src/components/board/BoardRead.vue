@@ -27,6 +27,10 @@
             <td><textarea :value="board.content" rows="5" readonly></textarea></td>
           </tr>
         </table>
+          <v-btn @click="$router.push({ name: 'BoardModifyPage', params: { boardNo } })">Edit</v-btn>
+          <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
+          <v-btn @click="onDelete">Delete</v-btn>
+          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })">List</v-btn>
       </div>
   </div>
   </template>
@@ -35,15 +39,25 @@
 
 <script>
 import Layout from '@/components/Layout.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'BoardRead',
   components: {
     Layout
   },
+  computed: {
+    ...mapState([
+      'board'
+    ])
+  },
   props: {
     board: {
       type: Object,
+      required: true
+    },
+    boardNo: {
+      type: String,
       required: true
     }
   }

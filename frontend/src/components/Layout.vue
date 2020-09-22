@@ -98,3 +98,9 @@ export default {
 }
 
 </script>
+
+<!--<style>
+#inspire {
+ height:300px
+}
+</style>-->

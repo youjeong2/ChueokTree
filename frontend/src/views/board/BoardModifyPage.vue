@@ -22,7 +22,7 @@ export default {
   // 자동으로 boardNo이 mapping 되도록 ?
   props: {
     boardNo: {
-      type: String,
+      type: Number,
       required: true
     }
   },
@@ -32,7 +32,7 @@ export default {
   },
   // 요 객체가 생성이 될 때 conlsole 찍고 보드 하나를 물어와라
   // 에러 발생하면 경고 메세지를 띄워라 그리고 라우터 백을 해서 원래 페이지로 돌아가게 한다.
-  created () {
+  mounted () {
     console.log('BoardModifyPage created()')
     this.fetchBoard(this.boardNo)
       .catch(err => {

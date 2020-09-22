@@ -66,7 +66,7 @@ const routes = [
     }
   },
   {
-    path: '/board/:boardNo/edit',
+    path: '/board/boardNo/edit',
     name: 'BoardModifyPage',
     components: {
       default: BoardModifyPage

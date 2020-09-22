@@ -10,11 +10,11 @@
     <!-- Layout의 menubar로 정보가 전달됨) -->
     <template #menubar>
       <v-btn @click="start('society')" text color="white"
-        style="padding: 100px; width: 90px;">Attraction</v-btn>
+        style="padding: 10px; width: 150px;">Attraction</v-btn>
       <v-btn @click="start('politics')" text color="white"
-        style="padding: 100px; width: 90px;">Festival</v-btn>
+        style="padding: 10px; width: 150px;">Festival</v-btn>
       <v-btn @click="start('economic')" text color="white"
-        style="padding: 100px; width: 90px;">Cultural Facility</v-btn>
+        style="padding: 10px; width: 150px;">Cultural Facility</v-btn>
     </template>
     <template #content>
       <v-simple-table>
