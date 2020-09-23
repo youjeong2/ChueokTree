@@ -4,12 +4,8 @@
     <!-- 읽을게 있어야하니까 board="board"넣어주기 없다면 loading  -->
     <!-- params: {가변인자} -->
     <!-- Edit을 누르면 정보를 수정(BoardModifyPage로 link)할 수 있도록 라우팅 -->
-    <board-read v-if="board" :board="board"/>
+    <board-read v-if="board" :boardNo="boardNo" :board="board"/>
     <p v-else>Loading ...</p>
-      <v-btn @click="$router.push({ name: 'BoardModifyPage', params: { boardNo } })">Edit</v-btn>
-      <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
-      <v-btn @click="onDelete">Delete</v-btn>
-      <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })">List</v-btn>
   </div>
 </template>
 

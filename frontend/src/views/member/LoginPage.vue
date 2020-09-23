@@ -2,7 +2,7 @@
   <Layout>
     <template #content>
         <div align="center">
-          <h2>Login</h2>
+          <h2>로그인</h2>
           <login-form @submit="onSubmit"/>
         </div>
     </template>

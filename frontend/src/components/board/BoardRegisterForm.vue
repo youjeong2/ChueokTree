@@ -30,8 +30,8 @@
                     </v-col>
 
                 <v-col cols="5" sm="5" md="5" lg="5">
-                <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
-                <v-btn @click="clear">clear</v-btn>
+                <v-btn class="mr-4" @click="onSubmit" outlined color="purple darken-2" text="white">submit</v-btn>
+                <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" outlined color="purple darken-2" text="white">cancle</v-btn>
                 </v-col>
                 <br><br>
               </v-card>

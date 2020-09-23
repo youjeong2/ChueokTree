@@ -13,6 +13,7 @@ public interface MemberService {
     public void remove(Long userNo) throws Exception;
     public List<Member> list() throws Exception;
     public long countAll() throws Exception;
+    public boolean idcheck(String userId) throws Exception;
 }
 // regiser
 // setup 처음에 관리자계정만들어줘야함 -> 성격이 레지스터랑 똑같음-> 멤버를 가져와야하니까 member

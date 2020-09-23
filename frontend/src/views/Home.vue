@@ -24,7 +24,7 @@
         <!-- 로그인 하지 않았을 경우 -->
         <div id="header" v-else>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
-            style="padding: 10px; width: 100px;">About</v-btn>
+            style="padding: 10px; width: 100px;">OFFICIAL</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
             style="padding: 10px; width: 100px;">Coumunity</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
@@ -33,8 +33,6 @@
             style="padding: 10px; width: 150px;">TouristCategory</v-btn>
           <v-btn @click="$router.push({ name: 'LoginPage' })" text color="white"
             style="padding: 4px; width: 80px;">Login</v-btn>
-          <v-btn @click="$router.push({ name: 'AdminSetupPage' })" text color="white"
-            style="padding: 4px; width: 80px;">SignUp</v-btn>
         </div>
       </div>
     </template>

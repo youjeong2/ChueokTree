@@ -2,7 +2,7 @@
   <Layout>
      <template #content>
       <div align="center">
-        <h2>SignUp</h2>
+        <h2>회원가입</h2>
         <admin-setup-form @submit="onSubmit"/>
       </div>
      </template>

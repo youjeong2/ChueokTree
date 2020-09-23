@@ -29,10 +29,12 @@
                   hint="At least 8 characters"
                 ></v-text-field>
                 </v-col>
-            <v-col cols="5" sm="5" md="5" lg="5">
-            <v-btn class="mr-4" @click="submit">submit</v-btn>
-            <v-btn @click="clear">clear</v-btn>
+            <v-col cols="8" sm="5" md="5" lg="5">
+            <v-btn class="mr-4" @click="submit"
+            tile color="purple darken-2" dark style="padding: 5px; width: 200px;">로그인</v-btn>
             </v-col>
+            <v-btn class="mr-4" @click="$router.push({ name: 'AdminSetupPage' })"
+            outlined color="purple darken-2" text="white" style="padding: 5px; width: 200px;">회원가입</v-btn>
             <br><br>
           </v-card>
         </v-col>

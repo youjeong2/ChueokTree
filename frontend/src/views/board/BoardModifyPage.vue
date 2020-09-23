@@ -2,7 +2,7 @@
 <template>
   <div align="center">
     <h2>Board Modification</h2>
-    <board-modify-form v-if="board" :board="board" @submit="onSubmit"/>
+    <board-modify-form v-if="board" :board="board" :boardNo="boardNo" @submit="onSubmit"/>
     <p v-else>Loading ...</p>
   </div>
 </template>

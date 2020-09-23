@@ -135,7 +135,7 @@ public class MemberController {
 
     }
 
-        @GetMapping("/idCheck/{userId}")
+        @GetMapping("/idCheck/{userId}" )
         public ResponseEntity<String>idcheck(@PathVariable String userId) throws Exception {
             if (userId != null && !userId.trim().isEmpty()) {
                 if (service.idcheck(userId)) {
