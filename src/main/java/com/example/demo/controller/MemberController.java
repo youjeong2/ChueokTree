@@ -134,4 +134,17 @@ public class MemberController {
          return new ResponseEntity<>(auth, HttpStatus.OK);
 
     }
+
+        @GetMapping("/idCheck/{userId}")
+        public ResponseEntity<String>idcheck(@PathVariable String userId) throws Exception {
+            if (userId != null && !userId.trim().isEmpty()) {
+                if (service.idcheck(userId)) {
+                    return new ResponseEntity<String>("success", HttpStatus.OK);
+                }
+
+                    return new ResponseEntity<>("existed Id", HttpStatus.OK);
+            }
+
+            return new ResponseEntity<>("not", HttpStatus.BAD_REQUEST);
+        }
 }
