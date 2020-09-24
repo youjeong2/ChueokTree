@@ -9,14 +9,21 @@
     </div>
     <!-- Layout의 menubar로 정보가 전달됨) -->
     <template #menubar>
-      <v-btn @click="start('society')" text color="white"
+      <v-btn @click="start('culture')" text color="white"
         style="padding: 10px; width: 150px;">Attraction</v-btn>
-      <v-btn @click="start('politics')" text color="white"
+      <v-btn @click="start('foreign')" text color="white"
         style="padding: 10px; width: 150px;">Festival</v-btn>
-      <v-btn @click="start('economic')" text color="white"
+      <v-btn @click="start('digital')" text color="white"
         style="padding: 10px; width: 150px;">Cultural Facility</v-btn>
     </template>
     <template #content>
+    <v-sheet color="purple darken-2" dark> - ChueokTree Market - </v-sheet>
+    <v-alert
+      outlined
+      color="purple">
+      <div class="title"></div>
+      <div>Blueberries are perennial flowering plants with blue-or purple-coloerd berries</div>
+    </v-alert>
       <v-simple-table>
         <template v-slot:default>
           <thead>

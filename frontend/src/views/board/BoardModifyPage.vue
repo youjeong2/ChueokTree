@@ -1,7 +1,7 @@
 <!-- 보드정보가 있어야하고 바인드를 시켜서 특정대상만 갖고 오게하기 -->
 <template>
   <div align="center">
-    <h2>Board Modification</h2>
+    <h2></h2>
     <board-modify-form v-if="board" :board="board" :boardNo="boardNo" @submit="onSubmit"/>
     <p v-else>Loading ...</p>
   </div>

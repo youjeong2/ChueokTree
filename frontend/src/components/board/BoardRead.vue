@@ -3,11 +3,12 @@
   <template #content>
   <div align="center" >
         <div>
-        <br>
+        <v-sheet color="purple darken-2" dark> - Board Detailed View - </v-sheet>
         <table>
           <tr>
              <v-subheader>번호</v-subheader>
-            <td><input type="text" :value="board.boardNo" readonly></td>
+            <td><input type="text" :value="
+            board.boardNo" readonly></td>
           </tr>
           <tr>
             <v-subheader>작성일</v-subheader>
@@ -32,10 +33,10 @@
           </tr>
         </table>
         <v-col cols="5" sm="5" md="5" lg="5">
-          <v-btn @click="$router.push({ name: 'BoardModifyPage', params: { boardNo } })" class="mr-3 ml-10" outlined color="purple darken-2" text="white">Edit</v-btn>
+          <v-btn @click="$router.push({ name: 'BoardModifyPage', params: { boardNo } })" class="mr-3 ml-10" outlined color="purple darken-2" text="white">수정</v-btn>
           <!-- 버튼은 @클릭을 onDelte를 동작시키기 -->
-          <v-btn @click="onDelete" class="mr-3" outlined color="purple darken-2" text="white">Delete</v-btn>
-          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" class="mr-3" outlined color="purple darken-2" text="white">List</v-btn>
+          <v-btn @click="onDelete" class="mr-3" outlined color="purple darken-2" text="white">삭제</v-btn>
+          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" class="mr-3" outlined color="purple darken-2" text="white">목록</v-btn>
         </v-col>
       </div>
   </div>

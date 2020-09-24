@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h2>Detailed Board List</h2>
+    <!-- <h2>게시글</h2> -->
     <!-- 읽을게 있어야하니까 board="board"넣어주기 없다면 loading  -->
     <!-- params: {가변인자} -->
     <!-- Edit을 누르면 정보를 수정(BoardModifyPage로 link)할 수 있도록 라우팅 -->

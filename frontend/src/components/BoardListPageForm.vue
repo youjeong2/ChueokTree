@@ -1,42 +1,42 @@
 <template>
   <div>
     <v-card-title>
-      게시판
-        <v-divider
-          class="mx-10"
-          inset
-          vertical
-        ></v-divider>
-      <v-spacer></v-spacer>
-      <v-text-field
-        color="purple darken-2"
-        v-model="search"
-        append-icon="mdi-magnify"
-        label="Search"
-        single-line
-        hide-details
-        class="ma-5 "
-      ></v-text-field>
-      <v-row>
-          <v-btn @click="$router.push({ name: 'BoardRegisterPage' })" class="ma-2" outlined large fab color="purple darken-2">
-            <v-icon>mdi-pencil</v-icon></v-btn>
+      COMMUNITY
+      <v-divider class="mx-12" inset vertical></v-divider>
+        <v-text-field
+          color="purple darken-2"
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+          class="ma-5 mr-7 ml-12">
+        </v-text-field>
+        <v-row>
+          <v-btn @click="$router.push({ name: 'BoardRegisterPage' })"
+          class="ma-" outlined large fab color="purple darken-2">
+          <v-icon>mdi-pencil</v-icon></v-btn>
         </v-row>
     </v-card-title>
+
     <v-data-table
       :headers="headers"
       :items="paginatedData"
-      :search="search"
-    >
+      :search="search">
       <template v-slot:item.title="{ item }">
         <div @click="moveRead(item.boardNo)">{{ item.title  }}</div>
       </template>
     </v-data-table>
+    <v-col cols="5" sm="5" md="5" lg="5">
     <div class="btn-cover">
       <v-btn :disabled="pageNum === 0"
-        @click="prevPage" fab width="40" height="40" color="purple darken-2" class="page-btn mr-2"><v-icon>mdi-chevron-left</v-icon></v-btn>
-      <span class="page-count grey--text" >{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <v-btn :disabled="pageNum >= pageCount - 1" @click="nextPage" fab width="40" height="40" color="purple darken-3" class="page-btn ml-2"><v-icon>mdi-chevron-right</v-icon></v-btn>
+        @click="prevPage" fab width="40" height="40" color="purple darken-2"
+        class="page-btn mr-2"><v-icon>mdi-chevron-left</v-icon></v-btn>
+        <span class="page-count grey--text" >{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
+       <v-btn :disabled="pageNum >= pageCount - 1" @click="nextPage" fab width="40" height="40" color="purple darken-3"
+      class="page-btn ml-2"><v-icon>mdi-chevron-right</v-icon></v-btn>
     </div>
+    </v-col>
   </div>
 </template>
 

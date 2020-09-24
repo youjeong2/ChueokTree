@@ -1,75 +1,39 @@
 <template>
-  <div>
-    <table>
-      <tr>
-        <th>No</th>
-        <th>Tel</th>
-        <th>Address</th>
-        <th>Name</th>
-      </tr>
-      <tr v-for="page in paginatedData" :key="page.no">
-        <td>{{ page.no }}</td>
-        <td>{{ page.tel }}</td>
-        <td>{{ page.address }}</td>
-        <td>{{ page.name }}</td>
-      </tr>
-    </table>
-    <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이전</button>
-      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다음</button>
-    </div>
-  </div>
+  <v-container fluid>
+    <v-row dense>
+      <v-col
+        v-for="card in cards"
+        :key="card.title"
+        :cols="card.flex"
+      >
+      <a href="https://www.instagram.com/chueoktree_blueberry/?hl=ko">
+            <v-img
+              :src="card.src"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="300px"
+            >
+              <v-card-title v-text="card.title"></v-card-title>
+            </v-img>
+      </a>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: 'VuetifyBoardListForm',
   // 데이터
-  data () {
-    return {
-      pageNum: 0
-    }
-  },
-  // 아래쪽VutifyBoard에서 만든listArray를 전달해주기
-  // pageArray는 views에서 list-array는 compo에서 바인드로 전달받음 (data, props)
-  props: {
-    listArray: {
-      type: Array,
-      required: true
-    },
-    pageSize: {
-      type: Number,
-      required: true,
-      default: 10
-    }
-  },
-  methods: {
-    nextPage () {
-      this.pageNum += 1
-    },
-    prevPage () {
-      this.pageNum -= 1
-    }
-  },
-  computed: {
-    pageCount () {
-      const listLen = this.listArray.length
-      const listSize = this.pageSize
-
-      let page = Math.floor(listLen / listSize)
-      if (listLen % listSize > 0) {
-        page += 1
-      }
-
-      return page
-    },
-    // pagenatedData를 listArray로 return해서 list채워짐
-    paginatedData () {
-      const start = this.pageNum * this.pageSize
-      const end = start + this.pageSize
-      return this.listArray.slice(start, end)
-    }
-  }
+  data: () => ({
+    cards: [
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 4 },
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 4 },
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4 },
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 4 },
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 4 },
+      { title: '', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4 }
+    ]
+  })
 }
 </script>

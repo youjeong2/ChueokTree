@@ -2,38 +2,42 @@
   <Layout>
     <template #content>
       <div>
-        <h3>Board Modified Form</h3>
+      <v-sheet color="purple darken-2" dark> - Board Modify View - </v-sheet>
     <form @submit.prevent="onSubmit">
       <table>
         <tr>
-          <td>No</td>
+          <v-subheader>번호</v-subheader>
           <td><input type="text" :value="board.boardNo" disabled></td>
         </tr>
         <tr>
-          <td>Registration Date</td>
+          <v-subheader>작성일</v-subheader>
           <td><input type="text" :value="board.regDate" disabled></td>
         </tr>
         <tr>
-          <td>Title</td>
+          <v-subheader>제목</v-subheader>
           <!-- 내가 수정한 정보를 보내야하니까 그냥 title -->
-          <td><input type="text" v-model="title"></td>
+          <td><v-text-field input type="text" v-model="title"
+          color="purple darken-2" rows="2"></v-text-field></td>
         </tr>
         <tr>
-          <td>Writer</td>
+          <v-subheader>작성자</v-subheader>
           <!-- 얘는 바인드 -->
-          <td><input type="text" :value="board.writer" disabled></td>
+            <td><v-text-field :value="board.writer" readonly
+            color="purple darken-2" rows="2"></v-text-field></td>
         </tr>
         <tr>
-          <td>Content</td>
-          <td><textarea v-model="content" rows="5"></textarea></td>
+          <v-subheader>내용</v-subheader>
+          <td><v-textarea v-model="content" rows="5"
+          outlined color="purple darken-2" filled></v-textarea></td>
         </tr>
       </table>
-
       <div>
-        <button type="submit">Modify</button>
-        <router-link :to="{ name: 'BoardReadPage', params: { boardNo: board.boardNo.toString() } }">
-          Cancel
-        </router-link>
+      <v-col cols="5" sm="5" md="5" lg="5">
+        <v-btn type="submit" class="mr-3 ml-10"
+        outlined color="purple darken-2" text="white">수정</v-btn>
+        <v-btn @click="$router.push({ name: 'BoardReadPage', params: { boardNo: board.boardNo.toString() } })"
+        class="mr-3" outlined color="purple darken-2" text="white">취소</v-btn>
+      </v-col>
       </div>
     </form>
       </div>

@@ -15,8 +15,8 @@
             style="padding: 10px; width: 100px;">Community</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn>
-          <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
-            style="padding: 10px; width: 150px;">TouristCategory</v-btn>
+          <!-- <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
+            style="padding: 10px; width: 150px;">TouristCategory</v-btn> -->
           <div>
             <!-- <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span> -->
           </div>
@@ -25,12 +25,12 @@
         <div id="header" v-else>
           <v-btn @click="$router.push({ name: 'About' })" text color="white"
             style="padding: 10px; width: 100px;">OFFICIAL</v-btn>
-          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
-            style="padding: 10px; width: 100px;">Coumunity</v-btn>
-          <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
-            style="padding: 10px; width: 100px;">TourList</v-btn>
-          <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
-            style="padding: 10px; width: 150px;">TouristCategory</v-btn>
+          <!-- <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
+            style="padding: 10px; width: 100px;">Coumunity</v-btn> -->
+          <!-- <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
+            style="padding: 10px; width: 100px;">TourList</v-btn> -->
+          <!-- <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
+            style="padding: 10px; width: 150px;">TouristCategory</v-btn> -->
           <v-btn @click="$router.push({ name: 'LoginPage' })" text color="white"
             style="padding: 4px; width: 80px;">Login</v-btn>
         </div>
@@ -43,8 +43,11 @@
               <v-col cols="12" sm="6" md="12">
                 <v-hover v-slot:default="{ hover }" open-delay="200">
                   <v-card :elevation="hover ? 16 : 2" class="mx-auto" height="500" max-width="600">
-                    <v-card-text class="font-weight-medium mt-12 text-center subtitle-1">
-                    <v-img src="../assets/home.jpg"></v-img>
+                    <v-card-text class="font-weight-medium mt-1 text-center subtitle-1">
+                    <a href="https://www.instagram.com/chueoktree_blueberry/?hl=ko">
+                    <v-img src="../assets/home.jpg">
+                    </v-img>
+                    </a>
                     New In
                   </v-card-text>
                 </v-card>

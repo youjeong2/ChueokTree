@@ -58,6 +58,9 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	// 이미지 파일 추가
 	compile group: 'commons-io', name: 'commons-io', version: '2.7'
+	// selenium Java
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

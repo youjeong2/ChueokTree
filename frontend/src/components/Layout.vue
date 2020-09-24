@@ -20,10 +20,10 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            CheokTree
+            ChueokTree
           </v-list-item-title>
           <v-list-item-subtitle>
-            blueberry
+            Blueberry.com
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -43,10 +43,43 @@
       <v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
+            <v-icon>home-app</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+            <v-list-item-title @click="about">OFFICIAL</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-list dense>
+        <v-list-item @click.stop="left = !left">
+          <v-list-item-action>
           <v-icon></v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title @click="community">COMMUNITY</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-list dense>
+        <v-list-item @click.stop="left = !left">
+          <v-list-item-action>
+          <v-icon></v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="category">TOUR CATEGORY</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-list dense>
+        <v-list-item @click.stop="left = !left">
+          <v-list-item-action>
+          <v-icon></v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="tourist">TOURIST</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -85,14 +118,17 @@ export default {
     home () {
       (window.location.pathname !== '/') ? router.push('/') : router.go(0)
     },
+    community () {
+      (window.location.pathname !== '/VuetifyBoardListPage') ? router.push('/VuetifyBoardListPage') : router.go(0)
+    },
+    about () {
+      (window.location.pathname !== '/About') ? router.push('/About') : router.go(0)
+    },
     category () {
       (window.location.pathname !== '/CrawlCategory') ? router.push('/CrawlCategory') : router.go(0)
     },
-    community () {
-      (window.location.pathname !== '/VuetifyBoardListPage') ? router.push('/VuetifyBoardListPage/') : router.go(0)
-    },
-    savednews () {
-      (window.location.pathname !== '/savednews/list') ? router.push('/savednews/list') : router.go(0)
+    tourist () {
+      (window.location.pathname !== '/VuetifyBoard') ? router.push('/VuetifyBoard') : router.go(0)
     }
   }
 }
