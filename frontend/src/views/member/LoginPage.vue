@@ -23,11 +23,11 @@ export default {
     onSubmit (payload) {
       console.log('loginPage onSubmit()')
       this.login(payload).then(res => {
-        alert('Login Success')
+        alert('Enjoy Your Blueberry!')
         this.$router.push({ name: 'Home' })
       }).catch(err => {
         // alert(err.response.data.message)
-        alert('Something Fail: ', err)
+        alert('존재하지 않는 아이디입니다. ', err)
       })
     },
     ...mapActions(['login'])

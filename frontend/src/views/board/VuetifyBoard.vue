@@ -4,7 +4,8 @@ VuetifyBoardListPageForm-->
   <Layout>
     <template #content>
       <div align="center">
-        <h2>Recommend Tourist</h2>
+      <br>
+        <h2 class="oblique">instagram</h2>
          <vuetify-board-list-form/>
       </div>
   </template>
@@ -23,3 +24,11 @@ export default {
   }
 }
 </script>
+
+<style>
+h2.oblique {
+  font-style: oblique;
+  letter-spacing: 3px;
+  background-color: lightgrey;
+}
+</style>

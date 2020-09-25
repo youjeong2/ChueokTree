@@ -8,31 +8,31 @@
         <!-- -isAuthorized 권한이 있으면 체크를 해서 접근을 할 수 있게 해줌
              -권한이 부여된거니까 로그아웃이 되게하고 @클릭하면 로그아웃이 되게 -->
         <div id="header" v-if="isAuthorized">
-          <v-btn id="login" @click="onClickLogout" text color="white">LOGOUT</v-btn>
-          <v-btn @click="$router.push({ name: 'About' })" text color="white"
-            style="padding: 10px; width: 100px;">About</v-btn>
-          <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
-            style="padding: 10px; width: 100px;">Community</v-btn>
           <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
-            style="padding: 10px; width: 100px;">TourList</v-btn>
+            style="padding: 10px; width: 100px;">OFFICIAL</v-btn>
+          <v-btn id="login" @click="onClickLogout" text color="white">LOGOUT</v-btn>
+          <!--<v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
+            style="padding: 10px; width: 100px;">Community</v-btn>-->
+          <!--<v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
+            style="padding: 10px; width: 100px;">TourList</v-btn>-->
           <!-- <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
             style="padding: 10px; width: 150px;">TouristCategory</v-btn> -->
           <div>
-            <!-- <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span> -->
+            <!--<br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span>-->
           </div>
         </div>
         <!-- 로그인 하지 않았을 경우 -->
         <div id="header" v-else>
-          <v-btn @click="$router.push({ name: 'About' })" text color="white"
+          <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">OFFICIAL</v-btn>
+          <v-btn @click="$router.push({ name: 'LoginPage' })" text color="white"
+            style="padding: 4px; width: 80px;">Login</v-btn>
           <!-- <v-btn @click="$router.push({ name: 'VuetifyBoardListPage' })" text color="white"
             style="padding: 10px; width: 100px;">Coumunity</v-btn> -->
           <!-- <v-btn @click="$router.push({ name: 'VuetifyBoard' })" text color="white"
             style="padding: 10px; width: 100px;">TourList</v-btn> -->
           <!-- <v-btn @click="$router.push({ name: 'CrawlCategory' })" text color="white"
             style="padding: 10px; width: 150px;">TouristCategory</v-btn> -->
-          <v-btn @click="$router.push({ name: 'LoginPage' })" text color="white"
-            style="padding: 4px; width: 80px;">Login</v-btn>
         </div>
       </div>
     </template>
@@ -48,7 +48,10 @@
                     <v-img src="../assets/home.jpg">
                     </v-img>
                     </a>
-                    New In
+                    <div class="home">
+                    click !<br>
+                    Follow ChueokTree
+                    </div>
                   </v-card-text>
                 </v-card>
               </v-hover>
@@ -108,3 +111,9 @@ export default {
       })
   }
 }</script>
+
+<style>
+div.home {
+  font-family: "Lucida Console", Courier, monospace;
+}
+</style>

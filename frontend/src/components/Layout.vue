@@ -8,7 +8,7 @@
          spacer은 컴포넌트 사이에 공간을 만들고 싶을 때 slot-name="menubar"을 서포트함
          슬롯으로 메뉴바를 연결하는거는 크롤링카테고리의 menubar정보를 여기에 연결하겠다는 뜻-->
           <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-          <v-toolbar-title><div @click="home">C h u e o k T r e e</div></v-toolbar-title>
+          <v-toolbar-title><div @click="home" class="home">C h u e o k T r e e</div></v-toolbar-title>
           <v-spacer></v-spacer>
         <slot name="menubar"></slot>
       </v-app-bar>
@@ -17,7 +17,7 @@
       <!--list-dense는 리스트 정렬
       action안에 icon 모양넣을 수 있고 content안에 홈으로 이동누르면 이동할 수 있는거 넣을 수 있음
       mdi-exit은 아이콘 모양 / 포토샵으로 만들 수 있음-->
-      <v-list-item>
+      <v-list-item class="layout">
         <v-list-item-content>
           <v-list-item-title class="title">
             ChueokTree
@@ -68,12 +68,12 @@
           <v-icon></v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="category">TOUR CATEGORY</v-list-item-title>
+            <v-list-item-title @click="category">TOP NEWS</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
 
-      <v-list dense>
+      <!--<v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
           <v-icon></v-icon>
@@ -82,7 +82,7 @@
             <v-list-item-title @click="tourist">TOURIST</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
+      </v-list>-->
     </v-navigation-drawer>
     <!-- 크롤링카테고리에서 보면 template #content Layout으로 감싸져서 여기로 전달할 수 있게함
      크롤링한 리스트 정보를 가져오고 리스트넘버랑 제목을 뿌려주는 것 -->
@@ -121,13 +121,13 @@ export default {
     community () {
       (window.location.pathname !== '/VuetifyBoardListPage') ? router.push('/VuetifyBoardListPage') : router.go(0)
     },
-    about () {
+    tourist () {
       (window.location.pathname !== '/About') ? router.push('/About') : router.go(0)
     },
     category () {
       (window.location.pathname !== '/CrawlCategory') ? router.push('/CrawlCategory') : router.go(0)
     },
-    tourist () {
+    about () {
       (window.location.pathname !== '/VuetifyBoard') ? router.push('/VuetifyBoard') : router.go(0)
     }
   }
@@ -140,3 +140,13 @@ export default {
  height:300px
 }
 </style>-->
+
+<style>
+div.home {
+  font-family: "Lucida Console", Courier, monospace;
+},
+v-list-item.layout {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+</style>
